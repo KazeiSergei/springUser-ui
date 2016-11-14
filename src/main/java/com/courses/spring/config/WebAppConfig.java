@@ -1,4 +1,4 @@
-package com.mkyong.web.config;
+package com.courses.spring.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.mkyong.web","com.courses.spring.dao"})
+@ComponentScan(basePackages = {"com.courses.spring","com.courses.spring.dao"})
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 
     @Override

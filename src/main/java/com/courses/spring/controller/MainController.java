@@ -1,4 +1,4 @@
-package com.mkyong.web.controller;
+package com.courses.spring.controller;
 
 import com.courses.spring.dao.interfaces.MarkDao;
 import com.courses.spring.dao.interfaces.StudentDao;

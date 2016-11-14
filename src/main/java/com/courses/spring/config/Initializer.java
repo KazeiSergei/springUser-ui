@@ -1,4 +1,4 @@
-package com.mkyong.web.config;
+package com.courses.spring.config;
 
 
 import org.springframework.web.WebApplicationInitializer;
