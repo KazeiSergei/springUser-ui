@@ -13,9 +13,11 @@
 
             <form:label path="firstName">Name:</form:label>
             <form:input path="firstName" />
+            <form:errors path="firstName" cssClass="error"/>
 
             <form:label path="secondName">SecondName:</form:label>
             <form:input path="secondName" />
+            <form:errors path="secondName" cssClass="error"/>
 
 
         </fieldset>

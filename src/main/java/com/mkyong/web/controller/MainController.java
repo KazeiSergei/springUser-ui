@@ -7,17 +7,13 @@ import com.courses.spring.dao.objects.Mark;
 import com.courses.spring.dao.objects.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.method.annotation.ModelMethodProcessor;
 import org.springframework.web.servlet.ModelAndView;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.Valid;
 
 
 @Controller
@@ -58,7 +54,10 @@ public class MainController {
     }
 
     @RequestMapping(value = "/createStudent", method = RequestMethod.POST)
-    public String addStudentToDB(@ModelAttribute("student") Student student) {
+    public String addStudentToDB(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            return "createStudent";
+        }
         jdbcStudentDao.insertStudent(student);
 
         return "redirect:/";
@@ -75,7 +74,11 @@ public class MainController {
     }
 
     @RequestMapping(value = "/updateStudent", method = RequestMethod.POST)
-    public String pageForUpdating(@ModelAttribute("student") Student student) {
+    public String pageForUpdating(@Valid @ModelAttribute("student") Student student, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            return "pageForUpdating";
+        }
+
         jdbcStudentDao.updateStudent(student);
 
         return "redirect:/getStudentById?id=" + student.getId();
@@ -91,10 +94,9 @@ public class MainController {
 
     @RequestMapping(value = "/getStudentWithMarkAndSubject", method = RequestMethod.GET)
     public ModelAndView getStudentWithMarkAndSudject(@RequestParam("id") Integer id) {
-        List<Student> students = jdbcStudentDao.getStudentWithMark(id);
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("students", students);
+        modelAndView.addObject("students", jdbcStudentDao.getStudentWithMark(id));
         modelAndView.addObject("id", id);
         modelAndView.addObject("subjects", jdbcSubjectDao.getAllSudject());
         modelAndView.setViewName("getStudentWithMarkAndSubject");
