@@ -1,8 +1,8 @@
-package com.courses.spring.impls;
+package com.courses.spring.dao.impls;
 
 
-import com.courses.spring.interfaces.StudentDao;
-import com.courses.spring.objects.Student;
+import com.courses.spring.dao.interfaces.StudentDao;
+import com.courses.spring.dao.objects.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;

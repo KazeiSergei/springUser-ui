@@ -1,7 +1,7 @@
-package com.courses.spring.interfaces;
+package com.courses.spring.dao.interfaces;
 
 
-import com.courses.spring.objects.Mark;
+import com.courses.spring.dao.objects.Mark;
 
 import java.util.List;
 

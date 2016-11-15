@@ -1,4 +1,4 @@
-package com.courses.spring.objects;
+package com.courses.spring.dao.objects;
 
 
 import javax.validation.constraints.Pattern;

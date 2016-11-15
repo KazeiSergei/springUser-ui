@@ -34,20 +34,5 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
-    @Bean(name="dataSource")
-    public DataSource dataSource(){
-        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-        driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/STUDENT_DB");
-        driverManagerDataSource.setUsername("sergei");
-        driverManagerDataSource.setPassword("sergei");
-        return  driverManagerDataSource;
-    }
-
-    @Bean(name="namedParameterJdbcTemplate")
-    public NamedParameterJdbcOperations namedParameterJdbcTemplate(){
-        return new NamedParameterJdbcTemplate(dataSource());
-    }
-
 
 }

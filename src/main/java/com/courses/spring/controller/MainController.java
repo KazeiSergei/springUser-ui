@@ -1,10 +1,10 @@
 package com.courses.spring.controller;
 
-import com.courses.spring.interfaces.MarkDao;
-import com.courses.spring.interfaces.StudentDao;
-import com.courses.spring.interfaces.SubjectDao;
-import com.courses.spring.objects.Mark;
-import com.courses.spring.objects.Student;
+import com.courses.spring.dao.interfaces.MarkDao;
+import com.courses.spring.dao.interfaces.StudentDao;
+import com.courses.spring.dao.interfaces.SubjectDao;
+import com.courses.spring.dao.objects.Mark;
+import com.courses.spring.dao.objects.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

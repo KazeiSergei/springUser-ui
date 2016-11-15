@@ -1,8 +1,8 @@
-package com.courses.spring.impls;
+package com.courses.spring.dao.impls;
 
 
-import com.courses.spring.interfaces.MarkDao;
-import com.courses.spring.objects.Mark;
+import com.courses.spring.dao.interfaces.MarkDao;
+import com.courses.spring.dao.objects.Mark;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

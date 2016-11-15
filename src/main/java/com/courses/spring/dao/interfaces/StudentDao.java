@@ -1,9 +1,9 @@
-package com.courses.spring.interfaces;
+package com.courses.spring.dao.interfaces;
 
 
 
 
-import com.courses.spring.objects.Student;
+import com.courses.spring.dao.objects.Student;
 
 import java.util.List;
 

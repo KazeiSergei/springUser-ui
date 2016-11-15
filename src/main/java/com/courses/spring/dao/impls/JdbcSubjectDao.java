@@ -1,8 +1,8 @@
-package com.courses.spring.impls;
+package com.courses.spring.dao.impls;
 
 
-import com.courses.spring.interfaces.SubjectDao;
-import com.courses.spring.objects.Subject;
+import com.courses.spring.dao.interfaces.SubjectDao;
+import com.courses.spring.dao.objects.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
